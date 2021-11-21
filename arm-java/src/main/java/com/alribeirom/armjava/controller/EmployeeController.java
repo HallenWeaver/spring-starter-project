@@ -36,12 +36,12 @@ public class EmployeeController {
     }
 
     @GetMapping("/{id}")
-    public Employee getById(@PathVariable Long id){
+    public Employee getById(@PathVariable String id){
         return repository.findById(id).orElseThrow(() -> new EmployeeNotFoundException(id));
     }
 
     @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable Long id){
+    public void deleteById(@PathVariable String id){
         repository.deleteById(id);
     }
 }

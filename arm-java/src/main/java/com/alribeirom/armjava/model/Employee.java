@@ -2,21 +2,22 @@ package com.alribeirom.armjava.model;
 
 import java.time.LocalDate;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import com.alribeirom.armjava.dto.EmployeeDTO;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
+@Document("employees")
 @NoArgsConstructor
 public class Employee {
     @Getter
-    private @Id @GeneratedValue Long id;
+    private @Id @GeneratedValue String id;
     @Getter @Setter
     private String firstName;
     @Getter @Setter
